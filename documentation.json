@@ -1,0 +1,818 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "Chainable",
+            "id": "interface-Chainable-eeb6394b310e7cc14f0321cca3d9eb7f",
+            "file": "apps/todo-e2e/src/support/commands.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "declare namespace Cypress {\r\n  // eslint-disable-next-line @typescript-eslint/no-unused-vars\r\n  interface Chainable<Subject> {\r\n    login(email: string, password: string): void;\r\n  }\r\n}\r\n//\r\n// -- This is a parent command --\r\nCypress.Commands.add('login', (email, password) => {\r\n  console.log('Custom command example: Login', email, password);\r\n});\r\n//\r\n// -- This is a child command --\r\n// Cypress.Commands.add(\"drag\", { prevSubject: 'element'}, (subject, options) => { ... })\r\n//\r\n//\r\n// -- This is a dual command --\r\n// Cypress.Commands.add(\"dismiss\", { prevSubject: 'optional'}, (subject, options) => { ... })\r\n//\r\n//\r\n// -- This will overwrite an existing command --\r\n// Cypress.Commands.overwrite(\"visit\", (originalFn, url, options) => { ... })\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "kind": 166,
+            "methods": [
+                {
+                    "name": "login",
+                    "args": [
+                        {
+                            "name": "email",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "password",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "email",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "password",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Message",
+            "id": "interface-Message-f9726a8d16adab0fee53eec3728f9bcf",
+            "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Message {\r\n  message: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "message",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 164,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "AppService",
+            "id": "injectable-AppService-f2147ad328875da40e2bb8e2df5f2078",
+            "file": "apps/api/src/app/app.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getData",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Message",
+                    "typeParameters": [],
+                    "line": 6,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@nestjs/common';\r\nimport { Message } from '@pady/api-interfaces';\r\n\r\n@Injectable()\r\nexport class AppService {\r\n  getData(): Message {\r\n    return { message: 'Welcome to api!' };\r\n  }\r\n}\r\n",
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-dce84ee61010a0f32e76d29737b4d99d",
+            "file": "apps/todo/src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pady-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'pady-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss'],\r\n})\r\nexport class AppComponent {}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\r\n<router-outlet></router-outlet>\r\n"
+        },
+        {
+            "name": "ConfirmButtonComponent",
+            "id": "component-ConfirmButtonComponent-18478ce922c9ead979d6ec10a1bd65c3",
+            "file": "libs/atomic/src/lib/atom/confirm-button/confirm-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-confirm-button",
+            "styleUrls": [
+                "./confirm-button.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./confirm-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "confirmText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "confirmEvent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "EventEmitter<>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, EventEmitter, Output } from '@angular/core';\n\n@Component({\n  selector: 'ui-confirm-button',\n  templateUrl: './confirm-button.component.html',\n  styleUrls: ['./confirm-button.component.sass'],\n})\nexport class ConfirmButtonComponent {\n  @Input() confirmText: string;\n  @Output() confirmEvent: EventEmitter<null>;\n\n  constructor() {\n    this.confirmText = '';\n    this.confirmEvent = new EventEmitter<null>();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./confirm-button.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "templateData": "<button (click)='confirmEvent.emit()'>\n  {{ confirmText }}\n</button>\n"
+        },
+        {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-517b2663efc8ba11cfe938ce0d2d0bf8",
+            "file": "libs/atomic/src/lib/template/form/login-form/login.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-login-form",
+            "styleUrls": [
+                "./login.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "loginText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "confirmLogin",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "EventEmitter<>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'ui-login-form',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.sass'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class LoginComponent {\n  @Input() loginText: string;\n  @Output() confirmLogin: EventEmitter<null>;\n\n  constructor() {\n    this.loginText = '';\n    this.confirmLogin = new EventEmitter<null>();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import ../../../assets/colors\r\n\r\n.container\r\n  margin: auto\r\n\r\n  display: flex\r\n  flex-direction: column\r\n\r\n  background-color: $base-light\r\n",
+                    "styleUrl": "./login.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "templateData": "<div class='container'>\n  <ui-confirm-button [confirmText]='loginText' (confirmEvent)='confirmLogin.emit()'></ui-confirm-button>\n</div>\n"
+        },
+        {
+            "name": "RegisterComponent",
+            "id": "component-RegisterComponent-3b51162eea89fa53798839efdad64cbd",
+            "file": "libs/atomic/src/lib/template/form/register-form/register.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-register-form",
+            "styleUrls": [
+                "./register.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./register.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n  selector: 'ui-register-form',\n  templateUrl: './register.component.html',\n  styleUrls: ['./register.component.sass'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class RegisterComponent {\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./register.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<p>register-form works!</p>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-a87f8f19718d20acedd9377d2660357c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "apps/api/src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { Module } from '@nestjs/common';\r\n\r\nimport { AppController } from './app.controller';\r\nimport { AppService } from './app.service';\r\n\r\n@Module({\r\n  imports: [],\r\n  controllers: [AppController],\r\n  providers: [AppService],\r\n})\r\nexport class AppModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "AppService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-f875034775ca174befe78c9950de3490-1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "apps/todo/src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { RouterModule } from '@angular/router';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent],\r\n  imports: [BrowserModule, HttpClientModule, RouterModule],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AtomicModule",
+            "id": "module-AtomicModule-524f8823a3597079902fd61371ac692b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "libs/atomic/src/lib/atomic.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\n\nimport { LoginComponent } from './template/form/login-form/login.component';\nimport { RegisterComponent } from './template/form/register-form/register.component';\nimport { ConfirmButtonComponent } from './atom/confirm-button/confirm-button.component';\n\n@NgModule({\n  imports: [],\n  declarations: [\n    ConfirmButtonComponent,\n    LoginComponent,\n    RegisterComponent\n  ],\n  exports: [\n    ConfirmButtonComponent,\n    LoginComponent,\n    RegisterComponent\n  ]\n})\nexport class AtomicModule {\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ConfirmButtonComponent"
+                        },
+                        {
+                            "name": "LoginComponent"
+                        },
+                        {
+                            "name": "RegisterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ConfirmButtonComponent"
+                        },
+                        {
+                            "name": "LoginComponent"
+                        },
+                        {
+                            "name": "RegisterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/atomic/src/lib/template/form/login-form/login.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/atomic/src/lib/template/form/register-form/register.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  props: {\r\n\r\n  }\r\n})"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/api/src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false,\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/api/src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true,\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/todo/src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true,\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/todo/src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false,\r\n}"
+            },
+            {
+                "name": "getGreeting",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/todo-e2e/src/support/app.po.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => cy.get('h1')"
+            }
+        ],
+        "functions": [
+            {
+                "name": "bootstrap",
+                "file": "apps/api/src/main.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            }
+        ],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "libs/atomic/src/lib/template/form/login-form/login.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/atomic/src/lib/template/form/login-form/login.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "libs/atomic/src/lib/template/form/register-form/register.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/atomic/src/lib/template/form/register-form/register.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  props: {\r\n\r\n  }\r\n})"
+                }
+            ],
+            "apps/api/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/api/src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false,\r\n}"
+                }
+            ],
+            "apps/api/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/api/src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true,\r\n}"
+                }
+            ],
+            "apps/todo/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/todo/src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true,\r\n}"
+                }
+            ],
+            "apps/todo/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/todo/src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false,\r\n}"
+                }
+            ],
+            "apps/todo-e2e/src/support/app.po.ts": [
+                {
+                    "name": "getGreeting",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/todo-e2e/src/support/app.po.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => cy.get('h1')"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "apps/api/src/main.ts": [
+                {
+                    "name": "bootstrap",
+                    "file": "apps/api/src/main.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "apps/api/src/app/app.controller.ts",
+                "type": "controller",
+                "linktype": "controller",
+                "name": "AppController",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/api/src/app/app.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AppService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/api/src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/api/src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/api/src/main.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/todo-e2e/src/support/app.po.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getGreeting",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/todo-e2e/src/support/commands.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Chainable",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/todo/src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/todo/src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/todo/src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/api-interfaces/src/lib/api-interfaces.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Message",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/atomic/src/lib/atom/confirm-button/confirm-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ConfirmButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/atomic/src/lib/template/form/login-form/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/atomic/src/lib/template/form/login-form/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/atomic/src/lib/template/form/register-form/register.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RegisterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/atomic/src/lib/template/form/register-form/register.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

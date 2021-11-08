@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pady/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@pady/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@pady/atomic": ["libs/atomic/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

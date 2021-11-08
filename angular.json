@@ -66,6 +66,31 @@
         }
       }
     },
+    "atomic": {
+      "projectType": "library",
+      "root": "libs/atomic",
+      "sourceRoot": "libs/atomic/src",
+      "prefix": "ui",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/atomic"],
+          "options": {
+            "jestConfig": "libs/atomic/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/atomic/src/**/*.ts",
+              "libs/atomic/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "todo": {
       "projectType": "application",
       "root": "apps/todo",
